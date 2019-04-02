@@ -69,6 +69,7 @@ def runner
   card_total = initial_round
   if card_total > 21
     end_game(card_total)
+    break
   end
   until card_total > 21
     card_total += hit?(card_total)
