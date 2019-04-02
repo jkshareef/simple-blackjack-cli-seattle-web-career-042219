@@ -41,9 +41,11 @@ def hit?(card_total)
   prompt_user
   answer = get_user_input
   if answer == "s"
+    display_card_total(card_total)
     card_total
   elsif answer == "h"
     card_total += deal_card
+    display_card_total(card_total)
     card_total
   elsif answer != "h" || "s"
     invalid_command
@@ -71,5 +73,6 @@ def runner
   until card_total > 21
     card_total += hit?(card_total)
   end
+  end_game(card_total)
 end
     
